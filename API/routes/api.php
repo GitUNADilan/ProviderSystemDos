@@ -17,8 +17,8 @@ Route::middleware('api')->group(function () {
 
     // Rutas del módulo de Usuarios
     Route::prefix('users')->group(function () {
-        Route::get('/', [UserController::class, 'index']);
-        Route::post('/', [UserController::class, 'store']);
+        Route::get('/get', [UserController::class, 'index']);
+        Route::post('/add', [UserController::class, 'store']);
         Route::delete('/{id}', [UserController::class, 'destroy']);
         Route::put('/{id}', [UserController::class, 'update']);
         Route::get('/show/{id}', [UserController::class, 'show']);

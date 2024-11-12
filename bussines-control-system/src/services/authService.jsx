@@ -26,6 +26,34 @@ const login = async (credentials) => {
   }
 };
 
+const register = async (userData) => {
+  try {
+      // 1. Obtener CSRF cookie
+      await api.get('/sanctum/csrf-cookie');
+      
+      // 2. Registrar usuario
+      const response = await api.post('/api/users/add', userData);
+      
+      // 3. Guardar token si el backend lo devuelve
+      if (response.data.token) {
+          localStorage.setItem('token', response.data.token);
+          api.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`;
+      }
+
+      return response.data;
+  } catch (error) {
+      console.error('Error en registro:', error);
+      // Manejar diferentes tipos de errores
+      if (error.response?.data?.errors) {
+          throw { errors: error.response.data.errors };
+      }
+      throw new Error(
+          error.response?.data?.message || 'Error en el registro'
+      );
+  }
+};
+
+
 const logout = async () => {
   try {
     await api.post('/api/logout');
@@ -36,7 +64,14 @@ const logout = async () => {
   }
 };
 
+// Función para verificar si el usuario está autenticado
+const isAuthenticated = () => {
+  return !!localStorage.getItem('token');
+};
+
 export const authService = {
   login,
-  logout
+  logout,
+  register,
+  isAuthenticated
 };
