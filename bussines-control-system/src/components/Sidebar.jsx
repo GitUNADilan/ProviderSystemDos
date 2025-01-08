@@ -11,8 +11,8 @@ const Sidebar = () => {
         </div>
         <nav className="sidebar-nav">
           <ul>
-            <li><a href="/">Productos</a></li>
-            <li><a href="/register">Proveedores</a></li>
+            <li><a href="/ProductsTable ">Productos</a></li>
+            <li><a href="/">Proveedores</a></li>
             <li><a href="/">Distribuidores</a></li>
             <li><a href="/">Ventas</a></li>
             <li><a href="/">Compras</a></li>

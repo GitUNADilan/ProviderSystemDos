@@ -1,0 +1,109 @@
+.products-container {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .btn-add {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .btn-export {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .btn-edit {
+    background-color: #FFC107;
+    color: black;
+  }
+  
+  .btn-delete {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .btn-save {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .products-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .products-table th,
+  .products-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .products-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+  }
+  
+  .products-table input,
+  .products-table select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .status {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+  }
+  
+  .status.active {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+  }
+  
+  .status.inactive {
+    background-color: #FFEBEE;
+    color: #C62828;
+  }
+  
+  .products-table tr:hover {
+    background-color: #f5f5f5;
+  }
